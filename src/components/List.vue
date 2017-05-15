@@ -1,6 +1,6 @@
 <template>
-	<ul class="collection with-header">
-		<li class="collection-header"><h4>Tâches en attente</h4></li>
+	<ul class="collection with-header left-align">
+		<li class="collection-header center-align"><h4>Tâches en attente</h4></li>
 		<task v-for="task in tasks" :tsk="task"></task>
 	</ul>
 </template>

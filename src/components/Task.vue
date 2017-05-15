@@ -1,5 +1,5 @@
 <template>
-	<li class="collection-item"><div>{{ tsk.title }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+	<li class="collection-item"><div><span class="task-title">{{ tsk.title }}</span><br><span>ETA : {{ tsk.hours }} heures</span><br><span>Priorité : {{ tsk.criticality }}</span><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
 </template>
 
 <script>
@@ -15,3 +15,9 @@
 		}
 	}
 </script>
+
+<style scoped>
+	.task-title {
+		font-weight: 700;
+	}
+</style>
