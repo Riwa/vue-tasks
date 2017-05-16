@@ -1,16 +1,16 @@
 <template>
   <div>
-    <list></list>
+    <hidden-list></hidden-list>
   </div>
 </template>
 
 <script>
-import List from '@/components/List'
+import HiddenList from '@/components/HiddenList'
 
 export default {
-  name: 'main',
+  name: 'hidden',
   components: {
-    list: List,
+    hiddenList: HiddenList,
   },
   data () {
     return {

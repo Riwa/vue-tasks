@@ -15,13 +15,30 @@
 <script>
 import Navbar from '@/components/Navbar'
 import Add from '@/components/Add'
+import {Store} from '@/Store.js'
+import {Bus} from '@/Bus.js'
 
 export default {
   name: 'app',
   components: {
     navbar: Navbar,
     add: Add,
-  }
+  },
+  data() {
+		return {
+			tasks: Store.datas,
+		}
+	},
+  	created() {
+			Bus.$on('addTask', (content) => {
+					console.log('Hello from List.vue');
+					this.tasks.tasks.push(content);
+					console.log(`Ce n'est pas mon problème`)
+
+				//console.log(this.tasks);
+			}
+			);
+	}
 }
 </script>
 

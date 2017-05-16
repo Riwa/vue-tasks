@@ -1,7 +1,7 @@
 <template>
 	<ul class="collection with-header left-align">
-		<li class="collection-header center-align"><h4>Tâches en attente</h4></li>
-		<task v-for="task in tasks.tasks" :tsk="task" v-if="task.visibility === true"></task>
+		<li class="collection-header center-align"><h4>Tâches masquées</h4></li>
+		<task v-for="task in tasks.tasks" :tsk="task" v-if="task.visibility === false"></task>
 	</ul>
 </template>
 
@@ -25,11 +25,11 @@ export default {
 
 	created() {
 			// Bus.$on('addTask', (content) => {
-			// 	if(content.visibility === true) {
+			// 	if(content.visibility === false){
 			// 		console.log('Hello from List.vue');
 			// 		this.tasks.tasks.push(content);
 			// 	} else {
-			// 		console.log(`Cela ne me regarde pas`)
+			// 		console.log(`Ce n'est pas mon problème`)
 			// 	}
 
 			// 	//console.log(this.tasks);

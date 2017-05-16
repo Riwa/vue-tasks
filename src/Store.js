@@ -17,7 +17,7 @@ export const Store = {
 				title: 'Acheter de l\'uranium bio',
 				criticality: 6,
 				hours: 5,
-				visibility: true,
+				visibility: false,
 			},
 			{
 				title: 'Régler l\'issue #44',
@@ -41,7 +41,7 @@ export const Store = {
 				title: 'Remplacer les pneus du caniche',
 				criticality: 1,
 				hours: 5,
-				visibility: true,
+				visibility: false,
 			},
 			{
 				title: 'Supprimer les branches inutiles sur GitHub',
@@ -53,7 +53,7 @@ export const Store = {
 				title: 'Eplucher le hamster',
 				criticality: 9,
 				hours: 5,
-				visibility: true,
+				visibility: false,
 			},
 			{
 				title: 'Rédiger les mentions légales',
@@ -61,6 +61,13 @@ export const Store = {
 				hours: 5,
 				visibility: true,
 			}
-		]
+		],
+
+		newTask: {
+			title: '',
+			criticality: 0,
+			hours: 0,
+			visibility: false,
+		}
 	}
 }

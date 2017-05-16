@@ -10,7 +10,7 @@
 		props: ['tsk'],
 		data(){
 			return {
-				tasks: Store.datas.tasks
+				tasks: Store.datas
 			}
 		}
 	}
