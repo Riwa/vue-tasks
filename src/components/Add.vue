@@ -7,11 +7,11 @@
 				<label for="task_name">Titre de la tâche</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="task_ETA" v-model="newTask.hours" type="number" class="validate">
+				<input id="task_ETA" v-model.number="newTask.hours" type="number" class="validate">
 				<label for="task_ETA">Temps de réalisation estimé (heures)</label>
 			</div>
 			<div class="input-field col s12">
-				<input id="task_crit" v-model="newTask.criticality" type="number" class="validate" min="0" max="10">
+				<input id="task_crit" v-model.number="newTask.criticality" type="number" class="validate" min="0" max="10">
 				<label for="task_crit">Criticité</label>
 			</div>
 				<div class="switch">
@@ -24,6 +24,7 @@
 			</div>
 			<a class="waves-effect waves-light btn" @click="addTask()"><i class="material-icons right">add</i>Ajouter</a>
 		</form>
+		<span class="alert"> <i v-if="alert3msg.length > 1" class="material-icons">warning</i> {{ alert3msg }} <i v-if="alert3msg.length > 1" class="material-icons">warning</i></span>
 	</div>
 </template>
 
@@ -32,9 +33,15 @@ import {Bus} from '@/Bus.js'
 import {Store} from '@/Store.js'
 
 export default {
+	created() {
+		Bus.$on('alert3', () => {
+			this.alert3msg = 'Hé oh ! Doucement'
+		})
+	},
 	data() {
 		return {
 			newTask: Store.datas.newTask,
+			alert3msg: ''
 		}
 	},
 		methods: {
@@ -59,5 +66,6 @@ export default {
 <style scoped>
 	.btn {
 		margin-top:30px;
+		margin-bottom: 30px;
 	}
 </style>

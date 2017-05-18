@@ -1,7 +1,7 @@
 <template>
 	<ul class="collection with-header left-align">
 		<li class="collection-header center-align"><h4>Tâches masquées</h4></li>
-		<task v-for="task in tasks.tasks" :tsk="task" v-if="task.visibility === false"></task>
+		<task v-for="task in tasks.tasks" :tsk="task" :key="task.id" v-if="task.visibility === false"></task>
 	</ul>
 </template>
 
